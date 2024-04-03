@@ -1,0 +1,116 @@
+﻿@model MyClinic_DB.Models.Appointments
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <div class="jumbotron">
+
+        <div class="login-box shadow rounded p-5">
+            <div id="selectedArea">
+                <h2>APPOINTMENT DETAILS</h2>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Doctor.DoctorName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Doctor.DoctorName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PatientName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PatientName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Date)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Bill)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Bill)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Desease)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Desease)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Prescriptions)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Prescriptions)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Progress)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Progress)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.AppointId }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+
+                <button type="button" onclick="printSelectedArea()" class="btn btn-primary">
+                    PRINT
+                </button>
+            </p>
+
+        </div>
+    </div>
+<script>
+    function printSelectedArea() {
+        var printContent = document.getElementById("selectedArea").innerHTML;
+        var originalContent = document.body.innerHTML;
+        document.body.innerHTML = printContent;
+        window.print();
+        document.body.innerHTML = originalContent;
+    }
+</script>
+
+
+
+<style>
+    .jumbotron {
+        font-weight: bold;
+        
+        align-items:center;
+        display:flex;
+        justify-content:center;
+       
+    }
+    .login-box {
+        width: 60%;
+        background-color: aliceblue;
+    }
+    dd {
+        color: red;
+    }
+    .form-horizontal{
+        padding-left: 40px;
+    }
+</style>

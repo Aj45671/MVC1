@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+}
+<body>
+
+    <h2 id="title">@ViewBag.Title</h2>
+    <h3>@ViewBag.Message</h3>
+    <div class="jumbotron">
+
+        <div class="login-box shadow rounded p-5">
+            <h3>ADDRESS : </h3>
+
+            <address>
+                Phase 3,Hinjawadi Rajiv Gandhi Infotech Park<br />
+                Pune, Maharashtra ,411057<br />
+                <abbr title="Phone ">Phone: 999999999</abbr>
+
+            </address>
+            <h3>Want to Book an Appointment :</h3>
+        
+            <input type="button" class="btn btn-primary" value="Appointment" onclick="location.href='@Url.Action("Create", "Appointments")'" />
+            <h3>EMAIL US AT:</h3>
+            <label> Support:</label>  <a href="mailto:Support@example.com">MyClinicSupport@example.com</a><br />
+            <label> Marketing:</label><a href="mailto:Marketing@example.com">MyClinicMarketing@example.com</a>
+        </div>
+            </div>
+          
+            
+
+
+            <br /><br /><br />
+            <style>
+                .jumbotron {
+                    font-weight: bold;
+                    align-items: center;
+                    display: flex;
+                    justify-content: left;
+                }
+
+                .login-box {
+                    width: 60%;
+                    background-color: lightgoldenrodyellow;
+                    box-shadow: 10px 20px gold;
+                }
+
+                h3 {
+                    font-weight: bold;
+                    color: red;
+                }
+
+                abbr {
+                    font-size: 20px;
+                    color: forestgreen;
+                    font-weight: bold;
+                }
+
+                .c1 {
+                    border-style: solid;
+                    border-width: 4px;
+                    border-color: lightseagreen;
+                    background-color: gold;
+                    width: fit-content;
+                    float: left;
+                    font-weight: bold;
+                    color: ghostwhite;
+                }
+
+                .c2 {
+                    float: left;
+                }
+
+                body {
+                    background-image: url('/Content/image-113.png');
+                }
+
+                #title {
+                    color: aqua;
+                }
+            </style>
+
+</body>

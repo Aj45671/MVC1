@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <title>@ViewBag.Title - Clinic Management System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger mr-auto" style="background-color: #e3f2fd;">
+        <div class="container ">
+            @Html.ActionLink("My Clinic", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between"><i class="fa fa-stethoscope fa-5x"></i>
+                                                                                           <ul class="navbar-nav flex-grow-1">
+
+
+                                                                                               <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+
+                                                                                               <li>@Html.ActionLink("AboutUs", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                                                                                               <li>@Html.ActionLink("ContactDetails", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                                                                                               @if (User.Identity.IsAuthenticated)
+                                                                                               {
+                                                                                                   <li class="name"><a>Dear - @User.Identity.Name</a></li>
+                                                                                                   <li>@Html.ActionLink("Appointments", "Create", "Appointments", new { area = "" }, new { @class = "nav-link" })</li>
+
+
+
+                                                                                                   if (User.IsInRole("Admin"))
+                                                                                                   {
+
+                                                                                                       <li>@Html.ActionLink("Doctors", "Create", "Doctors", new { area = "" }, new { @class = "nav-link" })</li>
+
+                                                                                                       <li>@Html.ActionLink("Patients", "Create", "Patients", new { area = "" }, new { @class = "nav-link" })</li>
+                                                                                                       <li>@Html.ActionLink("Users", "Index", "Users", new { area = "" }, new { @class = "nav-link" })</li>
+
+                                                                                                   }
+
+
+                                                                                                   <li class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                                                                                       @Html.ActionLink("LogOut", "LogOut", "Login", new { area = "" }, new { @class = "btn btn-info" })
+                                                                                                   </li>
+
+                                                                                               }
+                                                                                               else
+                                                                                               {
+
+                                                                                                   <li class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                                                                                       @Html.ActionLink("Login", "Login", "Login", new { area = "" }, new { @class = "btn btn-success" })
+                                                                                                   </li>
+
+
+                                                                                               }
+                                                                                           </ul>
+</div>
+
+          
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <marquee><p>&copy; @DateTime.Now.Year - My Clinic Management System Project</p></marquee>
+        </footer>
+    </div>
+  
+    <style>
+        .navbar{
+            font-weight:bold;
+            height:100px;
+           color:whitesmoke;
+        }
+        body{
+            background-color:antiquewhite;
+        }
+        h2 {
+            font-weight: bold;
+            color: darkblue;
+        }
+
+        .form-horizontal {
+            font-weight: bold;
+            
+        }
+        footer{
+            font-weight:bold;
+            color:darkgoldenrod;
+        }
+        .name{
+            margin-top:8px;
+            color:white;
+        }
+
+       
+    </style>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

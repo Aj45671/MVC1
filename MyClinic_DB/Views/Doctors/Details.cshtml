@@ -1,0 +1,132 @@
+﻿@model MyClinic_DB.Models.Doctor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="jumbotron">
+
+    <div class="login-box shadow rounded p-5">
+        <div id="selectedArea">
+            <h2>DOCTOR DETAILS</h2>
+
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DoctorName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DoctorName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Birth_Date)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Birth_Date)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Department)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Department)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Charge)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Charge)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MonthlySalary)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MonthlySalary)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Qualification)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Qualification)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Experience)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Experience)
+                </dd>
+
+            </dl>
+            </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.DoctorId }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            <button type="button" onclick="printSelectedArea()" class="btn btn-primary">
+                PRINT
+            </button>
+        </p>
+
+        </div>
+    </div>
+<script>
+    function printSelectedArea() {
+        var printContent = document.getElementById("selectedArea").innerHTML;
+        var originalContent = document.body.innerHTML;
+        document.body.innerHTML = printContent;
+        window.print();
+        document.body.innerHTML = originalContent;
+    }
+</script>
+<style>
+    .jumbotron {
+        font-weight: bold;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .login-box {
+        width: 60%;
+        background-color:aliceblue;
+    }
+
+    dd {
+        color: red;
+    }
+
+    .form-horizontal {
+        padding-left: 40px;
+    }
+</style>

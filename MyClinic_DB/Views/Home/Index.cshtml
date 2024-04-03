@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<body>
+
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <header class="head">Welcome to the<br /> Clinic Management System!</header>
+            <br />
+            <p class="lead">
+                With the help of our project , we aim to improve your clinic related experience and manage your clinic efficiently
+                and effectively.
+            </p>
+
+            @*<label> Go to the Doctors :</label>
+        <input type="button" value="Doctors" onclick="location.href='@Url.Action("Index", "Doctors")'" />
+        <br /> <br />
+        <label>Go to the Patients :</label>
+        <input type="button" value="Patients" onclick="location.href='@Url.Action("Index", "Patients")'" />
+        <br /><br />
+        <label>Go to the Appointments :</label>
+        <input type="button" value="Appointments" onclick="location.href='@Url.Action("Index", "Appointments")'" />
+        <br /><br /><br /><br />*@
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top" src="~/Content/pexels6.jpg" alt="Card image cap" height="225">
+                        <div class="card-body">
+                            <h5 class="card-title">Doctor</h5>
+                            <p> For creating ,editing and deleting doctor details.</p>
+                            @Html.ActionLink("Go To Doctor", "Create", "Doctors", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top" src="~/Content/pexels2.jpg" alt="Card image cap"  height="225">
+                        <div class="card-body">
+                            <h5 class="card-title">Patients</h5>
+                            <p> For creating ,editing and deleting patient details.</p>
+                            @Html.ActionLink("Go To Patients", "Create", "Patients", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img class="card-img-top" src="~/Content/pexels7.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Appointments</h5>
+                            <p> For creating ,editing and deleting appointments details.</p>
+                            @Html.ActionLink("Go To Appointments", "Create", "Appointments", null, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                
+
+        </div>
+        </div>
+    </div>
+    <style>
+       
+        div{
+            color:darkmagenta;
+            font-weight:bold;
+        }
+        .head {
+            font-size: 30px;
+            
+            color: navajowhite;
+        
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(0, 0, 0); /* Semi-transparent black background */
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
+        }
+        .lead{
+            font-weight:bold;
+            color:darkblue;
+        }
+        
+    </style>
+</body>

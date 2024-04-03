@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PAYMENT</title>
+  
+</head>
+<body>
+    <div class="container">
+        <h2> Pay to confirm your Appointment, Please visit us later. </h2>
+        <h2>For more details, Connect with us at : <input type="button" class="btn btn-success" value="CLINIC MANAGEMENT" onclick="location.href='@Url.Action("Contact", "Home")'"></h2>
+    </div>
+    <br /><br />
+    <div class="card-details">
+        <p>Pay using your Credit  card</p>
+
+        <div class="card-number">
+            <label> Card Number: </label>
+            <input type="text" class="card-number-field"
+                   placeholder="###-###-###" />
+        </div>
+        <br />
+        <div class="date-number">
+            <label> Expiry Date: </label>
+            <input type="text" class="date-number-field"
+                   placeholder="DD-MM-YY" />
+        </div>
+        <br />
+        <div class="cvv-number">
+            <label> CVV number: </label>
+            <input type="text" class="cvv-number-field"
+                   placeholder="xxx" />
+        </div>
+        <br />
+        <div class="nameholder-number">
+            <label> Card Holder name: </label>
+            <input type="text" class="card-name-field"
+                   placeholder="Enter your Name" />
+        </div>
+        <br /><br />
+        <input type="button" class="btn btn-primary" value="PAY" onclick="location.href='@Url.Action("Index", "Home")'" />
+    </div>
+    
+    <style>
+        body {
+            background-color: lightblue;
+            color: darkgreen;
+        }
+
+        .container {
+            margin-top: 100px;
+            align-content: center;
+            margin-left: 40px;
+        }
+        .card-details{
+            font-weight:bold;
+            color:black;
+        }
+    </style>
+</body>
+</html>

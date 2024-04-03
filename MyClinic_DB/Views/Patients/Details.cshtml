@@ -1,0 +1,88 @@
+﻿@model MyClinic_DB.Models.Patients
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron">
+
+    <div class="login-box shadow rounded p-5">
+        <div id="selectedArea">
+            <h2>PATIENT DETAILS</h2>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.PatientName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PatientName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone_NO)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Phone_NO)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Birth_Date)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Birth_Date)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+            </dl>
+            </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.PatientId }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
+            <button type="button" onclick="printSelectedArea()" class="btn btn-primary">
+                PRINT
+            </button>
+        </p>
+        </div>
+    </div>
+<script>
+    function printSelectedArea() {
+        var printContent = document.getElementById("selectedArea").innerHTML;
+        var originalContent = document.body.innerHTML;
+        document.body.innerHTML = printContent;
+        window.print();
+        document.body.innerHTML = originalContent;
+    }
+</script>
+<style>
+    .jumbotron {
+        font-weight: bold;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .login-box {
+        width: 60%;
+        background-color: aliceblue;
+    }
+
+    dd {
+        color: red;
+    }
+
+    .form-horizontal {
+        padding-left: 40px;
+    }
+</style>
